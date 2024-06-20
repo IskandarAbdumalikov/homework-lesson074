@@ -14,7 +14,7 @@ const Products = () => {
       <div className="products__wrapper">
         {data?.data?.products?.map((product) => (
           <div key={product.id} className="products__card">
-            <Link>
+            <Link to={`/products/${product.id}`}>
               <img
                 src={
                   product.urls.length
@@ -35,8 +35,10 @@ const Products = () => {
           </div>
         ))}
       </div>
-      {isLoading?<Loading/>:<></>}
-      <button className="see-more-btn" onClick={() => setOffset((p) => p + 1)}>See more</button>
+      {isLoading ? <Loading /> : <></>}
+      <button className="see-more-btn" onClick={() => setOffset((p) => p + 1)}>
+        {isLoading ? "loading..." : "See more"}
+      </button>
     </div>
   );
 };
