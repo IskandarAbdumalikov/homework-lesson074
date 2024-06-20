@@ -7,7 +7,7 @@ const SearchModule = ({ data, setSearchValue }) => {
 
   return (
     <div className="search__module__wrapper">
-      {productData?.map((product) => (
+      {productData.length?productData?.map((product) => (
         <Link
           to={`/products/${product.id}`}
           className="search__card"
@@ -18,7 +18,7 @@ const SearchModule = ({ data, setSearchValue }) => {
 
           <h1>{product.title}</h1>
         </Link>
-      ))}
+      )):<h2>Nothing founded</h2>}
     </div>
   );
 };
