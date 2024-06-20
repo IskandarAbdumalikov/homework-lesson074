@@ -1,0 +1,46 @@
+.create__form {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  input {
+    max-width: 500px;
+    width: 100%;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 10px;
+    transition: 0.4s;
+    height: 50px;
+    padding: 10px 20px;
+    font-size: 20px;
+    &:focus {
+      border-color: rgb(0, 209, 0);
+    }
+  }
+  button {
+    max-width: 500px;
+    background: rgb(0, 209, 0);
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid rgb(0, 209, 0);
+    color: white;
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  .loading-btn{
+    background: gray;
+    border-color: gray;
+    cursor: no-drop;
+  }
+}
+
+.local__images {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  img{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}

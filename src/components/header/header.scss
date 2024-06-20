@@ -1,0 +1,49 @@
+.header{
+    background: rgb(0, 209, 0);
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0px;
+    margin-bottom: 100px;
+    &__nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        // padding: 20px 0px;
+        color: white;
+        &__logo{
+            font-size: 30px;
+        }
+        &__list{
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        &__search__form{
+            background: white;
+            display: flex;
+            align-items: center;
+            height: 50px;
+            border: 1px solid transparent;
+            border-radius: 20px;
+            width: 30%;
+            overflow: hidden;
+            input{
+                border: none;
+                outline: none;
+                height: 100%;
+                width: 90%;
+                padding: 0px 20px;
+                font-size: 20px;
+            }
+            svg{
+                color: black;
+                cursor: pointer;
+                flex: 1;
+                font-size: 25px;
+            }
+        }
+    }
+}
