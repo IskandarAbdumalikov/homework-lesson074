@@ -33,7 +33,7 @@ const Products = () => {
               </div>
             </div>
           </div>
-        ))}
+        )).reverse()}
       </div>
       {isLoading ? <Loading /> : <></>}
       <button className="see-more-btn" onClick={() => setOffset((p) => p + 1)}>

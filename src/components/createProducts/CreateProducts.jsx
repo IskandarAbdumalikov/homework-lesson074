@@ -3,6 +3,7 @@ import { useGetValue } from "../../hooks/useGetValue";
 import { useCreateProductMutation } from "../../context/api/productApi";
 import Localmages from "./Localmages";
 import "./createProduct.scss";
+import { useNavigate } from "react-router-dom";
 
 const initialState = {
   title: "",
@@ -17,7 +18,9 @@ const initialState = {
 const CreateProducts = () => {
   const { formData, handleChange } = useGetValue(initialState);
   const [files, setFiles] = useState("");
-  const [createProduct, { data, isLoading ,isSuccess}] = useCreateProductMutation();
+  const navigate = useNavigate();
+  const [createProduct, { data, isLoading, isSuccess }] =
+    useCreateProductMutation();
 
   const handleCreateProduct = (e) => {
     e.preventDefault();
@@ -33,9 +36,7 @@ const CreateProducts = () => {
       form.append("files", img, img.name);
     });
     createProduct(form);
-    if (isSuccess) {
-      createProduct('')
-    }
+    navigate("/admin/products");
   };
   return (
     <form
@@ -45,6 +46,7 @@ const CreateProducts = () => {
     >
       <h2>Create product</h2>
       <input
+        required
         value={formData.title}
         onChange={handleChange}
         placeholder="title"
@@ -59,6 +61,7 @@ const CreateProducts = () => {
         type="number"
       />
       <input
+        required
         value={formData.oldPrice}
         onChange={handleChange}
         placeholder="oldPrice"
@@ -66,6 +69,7 @@ const CreateProducts = () => {
         type="number"
       />
       <input
+        required
         value={formData.category}
         onChange={handleChange}
         placeholder="category"
@@ -73,6 +77,7 @@ const CreateProducts = () => {
         type="text"
       />
       <input
+        required
         value={formData.units}
         onChange={handleChange}
         placeholder="units"
@@ -80,6 +85,7 @@ const CreateProducts = () => {
         type="text"
       />
       <input
+        required
         value={formData.description}
         onChange={handleChange}
         placeholder="description"
@@ -87,6 +93,7 @@ const CreateProducts = () => {
         type="text"
       />
       <input
+        required
         value={formData.info}
         onChange={handleChange}
         placeholder="info"
@@ -95,6 +102,7 @@ const CreateProducts = () => {
       />
       <div>
         <input
+          required
           onChange={(e) => setFiles(e.target.files)}
           multiple={true}
           accept="image/*"
